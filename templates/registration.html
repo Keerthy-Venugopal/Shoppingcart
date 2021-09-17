@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <h3>REGISTER</h3>
+
+</head>
+<body>
+<center>
+<form action="register" method="post">
+    {% csrf_token %}
+    <input type="text" name="firstname" placeholder="First Name">
+    <input type="text" name="lastname" placeholder="Last Name">
+    <input type="text" name="username" placeholder="Username">
+    <input type="email" name="email" placeholder="Email">
+    <input type="password" name="password1" placeholder="Password">
+    <input type="password" name="password2" placeholder="Confirm Password">
+
+    <input type="submit" value="REGISTER" class="btn btn-primary" style="color:blue;">
+</form>
+<div>
+    {% for message in messages %}
+    <h4>{{message}}</h4>
+    {% endfor %}
+</div>
+</center>
+</body>
+</html>
+{% endblock %}

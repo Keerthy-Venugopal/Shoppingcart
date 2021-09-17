@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <h3>LOGIN</h3>
+
+</head>
+<body>
+<center>
+<form action="login" method="post">
+    {% csrf_token %}
+
+    <input type="text" name="username" placeholder="Username">
+    <input type="password" name="password" placeholder="Password">
+<!--    <input type="password" name="password2" placeholder="Confirm Password">-->
+    <input type="submit" value="LOGIN" class="btn btn-primary" style="color:blue;">
+</form>
+</center>
+</body>
+</html>
+{% endblock %}
